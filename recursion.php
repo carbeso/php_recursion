@@ -22,3 +22,17 @@ function x_array($result,$keyList){
 $xResult = x_array($result,$a);
 
 print_r($xResult);
+
+//如果想取得各層的KEY
+
+function print_array_key($arr){
+    foreach($arr as $key=>$value){
+    if(is_array($value)){
+        print_array_key($value);
+    }
+        print_r($key);
+    }
+}
+
+
+print_array_key($xResult);
